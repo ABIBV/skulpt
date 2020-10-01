@@ -2372,13 +2372,24 @@ function generateTurtleModule(_target) {
         TURTLE_COUNT         = 0;
     }
 
+    function setTracer(frame = 1, delay = 0) {
+        getFrameManager().frameBuffer(frame);
+        getFrameManager().refreshInterval(delay);
+    }
+
+    function update() {
+        return getFrameManager().update();
+    }
+
     return {
         skModule : _module,
         reset    : resetTurtle,
         stop     : stopTurtle,
         focus    : focusTurtle,
         Turtle   : Turtle,
-        Screen   : Screen
+        Screen   : Screen,
+        tracer   : setTracer,
+        update   : update
     };
 }
 
@@ -2397,6 +2408,8 @@ Sk.TurtleGraphics.module = currentTarget.turtleInstance.skModule;
 Sk.TurtleGraphics.reset  = currentTarget.turtleInstance.reset;
 Sk.TurtleGraphics.stop   = currentTarget.turtleInstance.stop;
 Sk.TurtleGraphics.focus  = currentTarget.turtleInstance.focus;
+Sk.TurtleGraphics.tracer  = currentTarget.turtleInstance.tracer;
+Sk.TurtleGraphics.update  = currentTarget.turtleInstance.update;
 Sk.TurtleGraphics.raw = {
     Turtle : currentTarget.turtleInstance.Turtle,
     Screen : currentTarget.turtleInstance.Screen
