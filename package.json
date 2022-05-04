@@ -41,7 +41,7 @@
     "name": "Brad Miller"
   },
   "publishConfig": {
-    "access": "public",
+    "access": "public"
   },
   "license": "MIT",
   "devDependencies": {
