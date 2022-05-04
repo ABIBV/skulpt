@@ -40,6 +40,9 @@
   "author": {
     "name": "Brad Miller"
   },
+  "publishConfig": {
+    "access": "public",
+  },
   "license": "MIT",
   "devDependencies": {
     "acorn": "^6.1.1",
